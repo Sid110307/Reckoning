@@ -1,6 +1,9 @@
-/build
-/__pycache__
+build/
+__pycache__/
 
 .DS_Store
-.localized
+
+.vscode/
+.vs/
+.idea/
 
