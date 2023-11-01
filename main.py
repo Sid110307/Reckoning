@@ -15,7 +15,7 @@ ground = u.Entity(model=u.Terrain(heightmap="./assets/textures/heightmap.jpg"), 
                   texture="grass", texture_scale=u.Vec3(4, 1, 4))
 
 player = FirstPersonController(
-    model="cube", z=-10, color=u.color.orange, origin_y=-1.5, position=u.Vec3(0, 10, 0))
+    model="cube", z=-10, color=u.color.orange, position=u.Vec3(0, 15, 0))
 player.collider = u.BoxCollider(player, size=(0, 1, 0))
 
 vision_light = u.SpotLight(
@@ -35,7 +35,7 @@ for i, j in itertools.product(range(crate_spread), range(0, crate_spread, 2)):
 
 
 def update():
-    player.speed = 12 if u.held_keys['shift'] else 8
+    player.speed = 12 if u.held_keys["shift"] else 8
     player_health.bar_color = u.color.rgb(
         255 * (100 - player_health.value), (255 * player_health.value) / 100, 0)
     player_health.text = f"{player_health.value} HP"
